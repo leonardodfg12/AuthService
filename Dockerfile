@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
 RUN dotnet restore ./AuthService.sln
-RUN dotnet publish ./src/AuthService.API/AuthService.API.csproj -c Release -o /app/publish
+RUN dotnet publish AuthService.API/AuthService.API.csproj -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
